@@ -2,139 +2,219 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
 }
-
-
 
 body {
   display: flex;
-  background: #fafafa;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: #fff;
 }
 
-/* MENU LATERAL */
 .menu-lateral {
-  width: 220px;
-  background: #000;
+  width: 180px;
+  background-color: #000;
   color: white;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  flex-shrink: 0;
+  padding: 24px 16px;
+  gap: 32px;
 }
 
-.logo-area {
-  text-align: center;
-  margin-bottom: 20px;
+.logo-texto {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-left: 4px;
 }
 
-.logo-area img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-bottom: 10px;
+.menu-lateral img.logo {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
-.logo-area h2 {
-  font-size: 20px;
-  letter-spacing: 2px;
-}
-
-.menu-lateral nav ul {
-  list-style: none;
-}
-
-.menu-lateral nav ul li {
-  padding: 12px 10px;
+.nome-site {
   font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s;
-  border-left: 3px solid transparent;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
 }
 
-.menu-lateral nav ul li:hover {
-  border-left: 3px solid white;
-  background-color: #111;
-}
-
-/* CONTEÚDO PRINCIPAL */
-.conteudo {
-  flex: 1;
-  height: 100vh;
-  padding: 20px 40px;
-  background: #fff;
-  overflow: hidden;
+.menu-lateral nav {
   display: flex;
   flex-direction: column;
+  gap: 24px;
 }
 
-/* Cabeçalho do perfil */
+.menu-lateral .grupo-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-lateral .grupo-links.separado {
+  margin-top: 32px;
+  border-top: 1px solid #444;
+  padding-top: 16px;
+}
+
+.menu-lateral nav a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.menu-lateral nav a span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-lateral nav a i {
+  font-size: 14px;
+  width: 18px;
+}
+
+.menu-lateral nav a:hover {
+  background-color: #222;
+}
+
+.menu-lateral .externo {
+  font-size: 10px;
+  margin-left: 6px;
+  color: white;
+}
+
+.conteudo {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.topo-direita {
+  position: absolute;
+  top: 24px;
+  right: 40px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  z-index: 10;
+}
+
+.manage-site {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 12px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.icone-topo {
+  background: #000;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perfil {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .cabecalho-perfil {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  gap: 24px;
+  margin-bottom: 24px;
 }
 
-.cabecalho-perfil img.avatar {
-  width: 100px;
-  height: 100px;
+.cabecalho-perfil img {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 20px;
 }
 
 .cabecalho-perfil .info h1 {
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
 }
 
 .cabecalho-perfil .info p a {
   text-decoration: none;
-  color: black;
-  font-size: 12px;
+  color: #333;
+  font-size: 14px;
 }
 
 .linha {
-  height: 1px;
-  background: #ccc;
-  margin: 10px 0;
+  height: 2px;
+  background: #111;
+  width: 100%;
+  margin: 16px 0;
 }
 
-/* Recentes + botão */
 .recentes {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .recentes h2 {
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .add-btn {
-  font-size: 22px;
+  font-size: 20px;
   background: #000;
-  color: #fff;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  color: white;
   border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Galeria */
 .galeria {
-  flex: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px;
-  overflow: hidden;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 
 .galeria img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 220px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 4px;
 }
